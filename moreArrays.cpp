@@ -17,6 +17,12 @@ string* reverseArray(string *arr){
     return reverse;
 }
 
+void displayArray(string *arr){
+    for (int i = 0; i < SIZE; i++)
+        cout << *(arr + i) << " ";
+    cout << endl;
+}
+
 int main(){
     string *strArr = nullptr;
     strArr = new string[SIZE];
@@ -25,13 +31,10 @@ int main(){
     *(strArr+2) = "Mo";
     *(strArr+3) = "Ro";
     *(strArr+4) = "Zo";
+    
     cout << "OG array: ";
-    for (int i = 0; i < SIZE; i++)
-	cout << *(strArr + i) << " ";
-    cout << endl;
+    displayArray(strArr);
     strArr = reverseArray(strArr);
     cout << "reversed array: ";
-    for (int i = 0; i < SIZE; i++)
-        cout << *(strArr + i) << " ";
-    cout << endl;
+    displayArray(strArr);
 }
